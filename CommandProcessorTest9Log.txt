@@ -1,0 +1,50 @@
+; Script 9
+;
+; Test of search failures with a large database file.
+;
+; Specify boundaries of coordinate space:
+world	0860000W	0750000W	320000N	430000N
+Latitude/longitude values in index entries are shown as signed integers, in total seconds.
+
+World boundaries are set to:
+x Range: -309600 - -270000
+y Range: 115200 - 154800
+-----------------------------------------------------------------------------------
+
+;
+; Import a large DB file:
+import	VA_All.txt
+Imported From:	VA_All.txt
+
+Imported features by name:	59546
+Longest probe sequence:	2140
+Imported locations:	59546
+-----------------------------------------------------------------------------------
+
+;
+; Check the location and name/state indices if you dare:
+;debug	quad
+;debug	hash
+;
+; Try a few name/state searches for nonexistent features:
+what_is	Bleaksburg	VA
+what_is	Nova	VA
+what_is	Wet Run	VA
+;
+; Try a location search for an empty location:
+what_is_at	383340N	0793423W
+;
+; And a few searches for an empty region:
+what_is_in	-long	363206N	0804752W	6	6
+The following 0 features were found in (36d 32m 6s North +/- 6, 80d 47m 52s West +/- 6)
+
+-----------------------------------------------------------------------------------
+
+what_is_in	-filter	water	363206N	0804752W	6	6
+The following 0 features were found in (36d 32m 6s North +/- 6, 80d 47m 52s West +/- 6)
+
+-----------------------------------------------------------------------------------
+
+;
+; Exit
+quit	

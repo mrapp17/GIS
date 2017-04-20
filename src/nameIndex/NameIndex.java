@@ -1,28 +1,33 @@
 package nameIndex;
 
+import java.util.ArrayList;
+
+import logFile.LogFileController;
+
 //Has a data member which is a hash table of all the elements that have been indexed into it
 
 public class NameIndex {
+	private LogFileController logFile;
 	HashTable<String, Integer> nameTable;
 
-	public NameIndex() {
-		nameTable = new HashTable<String, Integer>(10);
+	public NameIndex(int size, LogFileController logFile) {
+		nameTable = new HashTable<String, Integer>(size);
+		this.logFile = logFile;
 	}
 	
-	public boolean indexName(String feature, String state, int offset) {
-		return nameTable.insert(feature+state,offset);
+	public int indexName(String feature, String state, int offset) {
+		return nameTable.insert(feature+ " " +state,offset);
 	}
 	
-	public int getOffset(String feature, String state) {
-		Integer retval = (Integer) nameTable.find(feature+state);
+	public ArrayList<Integer> getOffset(String feature, String state) {
+		ArrayList<Integer> retval = nameTable.find(feature+":"+state);
 		if(retval == null)
-			return -1;
+			return null;
 		
-		return retval.intValue();
+		return retval;
 	}
 	
-	//IMPLEMENT DEBUG 
 	public void debug() {
-		
+		nameTable.displayTable(logFile);
 	}
 }

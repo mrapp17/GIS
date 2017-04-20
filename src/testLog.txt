@@ -1,0 +1,267 @@
+; Script 1
+;
+; Very basic testing of the simple search commands with a tiny DB.
+;
+; Specify boundaries of coordinate space:
+world	0794130W	0792630W	381500N	383000N
+Latitude/longitude values in index entries are shown as signed integers, in total seconds.
+
+World boundaries are set to:
+x Range: -286890 - -285990
+y Range: 137700 - 138600
+-----------------------------------------------------------------------------------
+
+;
+; Import some data:
+import	VA_Monterey.txt
+Imported From:	VA_Monterey.txt
+
+Imported features by name:	63
+Longest probe sequence:	22
+Imported locations:	63
+-----------------------------------------------------------------------------------
+
+;
+; Let's take a look at our data set... this is NOT a required feature
+; and you may comment the following command out:
+;debug	world
+;
+; Check the location and name/state indices:
+debug	quad
+ 	 	*
+ 		[(-286627, 137860) 2081] [(-286628, 137896) 7170] 
+ 	@
+ 		[(-286479, 137945) 2347] [(-286502, 138023) 2772] [(-286523, 138047) 7044] [(-286562, 138080) 8389] 
+ 		*
+	 	 	[(-286433, 137756) 688] [(-286358, 137773) 936] [(-286376, 137772) 6295] [(-286356, 137772) 7816] 
+	 		[(-286314, 137725) 2612] [(-286224, 137708) 3455] 
+	 	@
+	 		 	[(-286304, 137827) 1096] [(-286311, 137845) 3863] 
+	 			*
+	 		@
+	 			[(-286253, 137904) 1248] [(-286219, 137891) 5404] [(-286229, 137889) 7553] 
+	 			*
+	 		*
+		[(-286212, 137722) 4710] [(-286205, 137731) 4994] 
+	@
+		*
+		[(-286438, 137942) 410] [(-286269, 138108) 3328] [(-286231, 138105) 4265] [(-286374, 138012) 6169] 
+@
+	 	 	*
+	 		[(-286273, 138193) 6428] 
+	 	@
+	 		*
+	 		 	[(-286416, 138293) 6804] 
+	 			[(-286345, 138312) 4431] [(-286337, 138287) 8248] 
+	 		@
+	 			[(-286353, 138352) 6923] 
+	 			[(-286392, 138367) 0] [(-286393, 138370) 5726] 
+		[(-286213, 138302) 4144] 
+	@
+		*
+		 	[(-286329, 138414) 4554] 
+			 	[(-286301, 138424) 5154] [(-286324, 138413) 5564] 
+				*
+			@
+				[(-286269, 138486) 3991] 
+				[(-286319, 138445) 3173] [(-286321, 138438) 5877] 
+		@
+			 	[(-286299, 138530) 1835] [(-286316, 138492) 6675] 
+				[(-286231, 138536) 1557, 4837] 
+			@
+				[(-286263, 138580) 1958] 
+				[(-286313, 138576) 1405] 
+			 	*
+				*
+			@
+				[(-286379, 138600) 122] [(-286342, 138593) 250] [(-286358, 138591) 2897] 
+				[(-286403, 138593) 813] [(-286390, 138593) 1681] [(-286428, 138574) 6546] [(-286383, 138597) 7677] 
+	 	*
+		 	[(-286561, 138234) 6029] 
+			[(-286517, 138257) 7297] 
+		@
+			 	*
+				 	 	[(-286484, 138266) 2208] [(-286486, 138267) 7960] 
+				 		*
+				 	@
+				 		*
+				 		[(-286490, 138284) 7417] [(-286486, 138282) 8104] [(-286491, 138282) 8527] 
+					*
+				@
+					[(-286449, 138309) 532] 
+					*
+			@
+				*
+				[(-286500, 138341) 3614] 
+			[(-286638, 138326) 2489] [(-286582, 138315) 3736] 
+	@
+		[(-286612, 138532) 3049] [(-286475, 138508) 5283] 
+		*
+-----------------------------------------------------------------------------------
+
+debug	hash
+Format of display is
+Slot Number:	 [RecordKey, [List of offsets]]
+Current table size: 1024
+Number of elements in table: 63
+
+1:	[New Salem Church VA, [3863]]
+33:	[Lantz Mountain VA, [3049]]
+73:	[Doe Hill VA, [6428]]
+81:	[Seldom Seen Hollow VA, [4265]]
+82:	[Town of Monterey VA, [8527]]
+140:	[Smith Field VA, [7553]]
+145:	[Central Church VA, [813]]
+146:	[Seybert Chapel VA, [4431]]
+161:	[Jack Mountain VA, [2772]]
+209:	[New Hampden VA, [6546]]
+225:	[Mount Carlyle VA, [688]]
+226:	[Miracle Ridge VA, [3614]]
+241:	[West Strait Creek VA, [5564]]
+242:	[Blue Grass School (historical) VA, [7677]]
+273:	[Hamilton Chapel VA, [2081]]
+305:	[Thorny Bottom Church VA, [5154]]
+321:	[Clover Creek Presbyterian Church VA, [7816]]
+353:	[Hannah Field Airport VA, [6029]]
+362:	[Possum Trot VA, [6675]]
+385:	[Hightown Church VA, [2489]]
+417:	[Blue Grass VA, [122]]
+418:	[Buck Hill VA, [410]]
+421:	[Burners Run VA, [532]]
+427:	[Crab Run VA, [1096]]
+437:	[Davis Run VA, [1248]]
+452:	[Elk Run VA, [1405]]
+473:	[Frank Run VA, [1681]]
+481:	[Clover Creek VA, [6295]]
+497:	[Meadow Draft VA, [3455]]
+498:	[Strait Creek VA, [4837]]
+501:	[Highland Wildlife Management Area VA, [2347]]
+507:	[Swope Hollow VA, [4994]]
+517:	[Union Chapel VA, [5283]]
+529:	[Little Doe Hill VA, [3328]]
+532:	[Vance Hollow VA, [5404]]
+533:	[Rich Hills VA, [6804]]
+537:	[Key Run VA, [2897]]
+545:	[Asbury Church VA, [0]]
+546:	[Bear Mountain VA, [6169]]
+553:	[Trimble Knob VA, [7297]]
+577:	[Gulf Mountain VA, [1958]]
+582:	[Laurel Run VA, [3173]]
+593:	[Hupman Valley VA, [2612]]
+609:	[Monterey Methodist Episcopal Church VA, [8104]]
+637:	[Peck Run VA, [3991]]
+673:	[Highland Elementary School VA, [7960]]
+703:	[Barren Rock VA, [4144]]
+705:	[Highland High School VA, [2208]]
+723:	[Trimble VA, [7170]]
+737:	[Bluegrass Valley VA, [250]]
+769:	[Sounding Knob VA, [7044]]
+781:	[Simmons Run VA, [4554]]
+817:	[Claylick Hollow VA, [936]]
+818:	[Forks of Waters VA, [1557]]
+821:	[Ginseng Mountain VA, [1835]]
+827:	[Seybert Hills VA, [6923]]
+865:	[Southall Chapel VA, [4710]]
+872:	[White Run VA, [5726]]
+913:	[Monterey Mountain VA, [3736]]
+914:	[Monterey District VA, [8389]]
+933:	[Monterey VA, [7417]]
+977:	[Wooden Run VA, [5877]]
+993:	[Strait Creek School (historical) VA, [8248]]
+-----------------------------------------------------------------------------------
+
+;
+; Let's try a single-match name/state search:
+what_is	Trimble Knob	VA
+;
+; Let's check the buffer pool:
+debug	pool
+MRU
+LRU
+-----------------------------------------------------------------------------------
+
+;
+; Let's try a single-match location search:
+what_is_at	382812N	0793156W
+The following 1 features were found at (38d 28m 12s North, 79d 31m 56s West):
+
+6675: Possum Trot  Highland  VA
+-----------------------------------------------------------------------------------
+
+;
+; Let's check the buffer pool:
+debug	pool
+MRU
+	6675:	1496110|Possum Trot|Populated Place|VA|51|Highland|91|0793156W|382812N|2520|Monterey|09/28/1979
+LRU
+-----------------------------------------------------------------------------------
+
+;
+; Let's try a few more name/state searches:
+what_is	Swope Hollow	VA
+what_is	Possum Trot	VA
+what_is	Blue Grass	VA
+;
+; Let's check the buffer pool:
+debug	pool
+MRU
+	6675:	1496110|Possum Trot|Populated Place|VA|51|Highland|91|0793156W|382812N|2520|Monterey|09/28/1979
+LRU
+-----------------------------------------------------------------------------------
+
+;
+; Let's try a few more location searches:
+what_is_at	382145N	0793031W
+The following 1 features were found at (38d 21m 45s North, 79d 30m 31s West):
+
+4265: Seldom Seen Hollow  Highland  VA
+-----------------------------------------------------------------------------------
+
+what_is_at	382442N	0793451W
+The following 1 features were found at (38d 24m 42s North, 79d 34m 51s West):
+
+8527: Town of Monterey  Highland  VA
+-----------------------------------------------------------------------------------
+
+what_is_at	382607N	0793312W
+The following 1 features were found at (38d 26m 7s North, 79d 33m 12s West):
+
+0: Asbury Church  Highland  VA
+-----------------------------------------------------------------------------------
+
+;
+; Let's check the buffer pool:
+debug	pool
+MRU
+	0:	1481345|Asbury Church|Church|VA|51|Highland|91|0793312W|382607N|2684|Monterey|09/28/1979
+	8527:	2391311|Town of Monterey|Civil|VA|51|Highland|91|0793451W|382442N|2900|Monterey|02/19/2008
+	4265:	1486995|Seldom Seen Hollow|Valley|VA|51|Highland|91|0793031W|382145N|2461|Monterey SE|09/28/1979
+	6675:	1496110|Possum Trot|Populated Place|VA|51|Highland|91|0793156W|382812N|2520|Monterey|09/28/1979
+LRU
+-----------------------------------------------------------------------------------
+
+;
+; Let's try a two-match location search:
+what_is_at	382856N	0793031W
+The following 2 features were found at (38d 28m 56s North, 79d 30m 31s West):
+
+1557: Forks of Waters  Highland  VA
+4837: Strait Creek  Highland  VA
+-----------------------------------------------------------------------------------
+
+;
+; Let's check the buffer pool:
+debug	pool
+MRU
+	4837:	1487661|Strait Creek|Stream|VA|51|Highland|91|0793031W|382856N|2313|Monterey|09/28/1979
+	1557:	1483492|Forks of Waters|Locale|VA|51|Highland|91|0793031W|382856N|2313|Monterey|09/28/1979
+	0:	1481345|Asbury Church|Church|VA|51|Highland|91|0793312W|382607N|2684|Monterey|09/28/1979
+	8527:	2391311|Town of Monterey|Civil|VA|51|Highland|91|0793451W|382442N|2900|Monterey|02/19/2008
+	4265:	1486995|Seldom Seen Hollow|Valley|VA|51|Highland|91|0793031W|382145N|2461|Monterey SE|09/28/1979
+	6675:	1496110|Possum Trot|Populated Place|VA|51|Highland|91|0793156W|382812N|2520|Monterey|09/28/1979
+LRU
+-----------------------------------------------------------------------------------
+
+;
+; Exit
+quit	

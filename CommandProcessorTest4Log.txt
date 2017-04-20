@@ -1,0 +1,109 @@
+; Script 4
+;
+; General test of searches with a larger database file.
+;
+; Specify boundaries of coordinate space:
+world	0804500W	0800000W	370000N	374500N
+Latitude/longitude values in index entries are shown as signed integers, in total seconds.
+
+World boundaries are set to:
+x Range: -290700 - -288000
+y Range: 133200 - 135900
+-----------------------------------------------------------------------------------
+
+;
+; Import a smallish DB file:
+import	VA_Montgomery.txt
+Imported From:	VA_Montgomery.txt
+
+Imported features by name:	752
+Longest probe sequence:	274
+Imported locations:	752
+-----------------------------------------------------------------------------------
+
+;
+; Check the location and name/state indices if you dare:
+;debug	quad
+;debug	hash
+;
+; Try a few name/state searches:
+what_is	Paul Derring Hall	VA
+what_is	Holden Hall	VA
+what_is	Sugar Bottom Hollow	VA
+what_is	Blacksburg Quarry	VA
+;
+; And a few location searches:
+what_is_at	371347N	0802514W
+The following 1 features were found at (37d 13m 47s North, 80d 25m 14s West):
+
+93052: Torgersen Hall  Montgomery  VA
+-----------------------------------------------------------------------------------
+
+what_is_at	370817N	0802808W
+The following 1 features were found at (37d 8m 17s North, 80d 28m 8s West):
+
+18358: Barringer Mountain  Montgomery  VA
+-----------------------------------------------------------------------------------
+
+what_is_at	371105N	0803133W
+The following 1 features were found at (37d 11m 5s North, 80d 31m 33s West):
+
+41367: Radford AAP Heliport  Montgomery  VA
+-----------------------------------------------------------------------------------
+
+;
+; And a few region searches:
+what_is_in	371347N	0802514W	5	5
+The following 14 features were found in (37d 13m 47s North +/- 5, 80d 25m 14s West +/- 5)
+
+94590: Arts and Science Administration Building  VA (37d 13m 52s North, 80d 25m 13s West)
+49249: Brodie Hall  VA (37d 13m 48s North, 80d 25m 12s West)
+58296: Femoyer Hall  VA (37d 13m 52s North, 80d 25m 17s West)
+97755: James H Lane Hall  VA (37d 13m 51s North, 80d 25m 12s West)
+64598: Lane Hall  VA (37d 13m 51s North, 80d 25m 11s West)
+98725: Major Lloyd W Williams Hall  VA (37d 13m 52s North, 80d 25m 16s West)
+66603: Major Williams Dormitory  VA (37d 13m 51s North, 80d 25m 15s West)
+66741: McBryde Hall  VA (37d 13m 49s North, 80d 25m 19s West)
+71562: Newman Library  VA (37d 13m 44s North, 80d 25m 10s West)
+77757: Rasche Hall  VA (37d 13m 51s North, 80d 25m 9s West)
+92489: Robert Femoyer Hall  VA (37d 13m 52s North, 80d 25m 17s West)
+93052: Torgersen Hall  VA (37d 13m 47s North, 80d 25m 14s West)
+93361: War Memorial Chapel  VA (37d 13m 43s North, 80d 25m 15s West)
+93642: William H "Bosco" Rasche Hall  VA (37d 13m 50s North, 80d 25m 9s West)
+-----------------------------------------------------------------------------------
+
+what_is_in	371105N	0803133W	5	5
+The following 1 features were found in (37d 11m 5s North +/- 5, 80d 31m 33s West +/- 5)
+
+41367: Radford AAP Heliport  VA (37d 11m 5s North, 80d 31m 33s West)
+-----------------------------------------------------------------------------------
+
+what_is_in	370822N	0802430W	10	10
+The following 3 features were found in (37d 8m 22s North +/- 10, 80d 24m 30s West +/- 10)
+
+20695: Christiansburg Institute  VA (37d 8m 22s North, 80d 24m 30s West)
+53746: Church of God in Christ  VA (37d 8m 12s North, 80d 24m 26s West)
+102900: Tekoa Community School  VA (37d 8m 21s North, 80d 24m 38s West)
+-----------------------------------------------------------------------------------
+
+;
+; This one's special because there's nothing at the given coordinates,
+; but there is something within the box centered there:
+what_is_in	372230N	0802230W	120	120	
+The following 1 features were found in (37d 22m 30s North +/- 120, 80d 22m 30s West +/- 120)
+
+20120: Bruisers Knob  VA (37d 21m 11s North, 80d 20m 37s West)
+-----------------------------------------------------------------------------------
+
+;
+; And a few search failures:
+what_is	Monterey	VA
+what_is_at	371347N	0804505W
+what_is_in	372230N	0802230W	10	10	
+The following 0 features were found in (37d 22m 30s North +/- 10, 80d 22m 30s West +/- 10)
+
+-----------------------------------------------------------------------------------
+
+;
+; Exit
+quit	
